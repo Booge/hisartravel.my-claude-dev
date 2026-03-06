@@ -1,5 +1,5 @@
 "use client";
-import { ChevronRight } from "lucide-react";
+import { IconChevronRight } from "@tabler/icons-react";
 import { BLOGS } from "@/lib/constants";
 
 export default function BlogPage() {
@@ -22,7 +22,7 @@ export default function BlogPage() {
                   <h3 className="text-[13px] font-bold text-gray-800 dark:text-gray-100 mb-1">{b.title}</h3>
                   <p className="text-[10.5px] text-gray-400 leading-relaxed">{b.desc}</p>
                   <span className="inline-flex items-center gap-1 text-[10.5px] font-bold text-teal-600 mt-2">
-                    Baca Lagi <ChevronRight size={12} />
+                    Baca Lagi <IconChevronRight size={12} />
                   </span>
                 </div>
               </div>

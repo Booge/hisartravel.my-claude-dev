@@ -1,12 +1,12 @@
 "use client";
-import { Phone, MessageCircle, Mail, MapPin, Send } from "lucide-react";
+import { IconPhone, IconBrandWhatsapp, IconMail, IconMapPin, IconSend } from "@tabler/icons-react";
 import { SITE } from "@/lib/constants";
 
 const contacts = [
-  { icon: Phone, text: SITE.phone, href: SITE.phoneTel },
-  { icon: MessageCircle, text: SITE.wa, href: SITE.waLink },
-  { icon: Mail, text: SITE.email, href: "mailto:" + SITE.email },
-  { icon: MapPin, text: SITE.address, href: null },
+  { icon: IconPhone, text: SITE.phone, href: SITE.phoneTel },
+  { icon: IconBrandWhatsapp, text: SITE.wa, href: SITE.waLink },
+  { icon: IconMail, text: SITE.email, href: "mailto:" + SITE.email },
+  { icon: IconMapPin, text: SITE.address, href: null },
 ];
 
 export default function HubungiPage() {
@@ -40,11 +40,11 @@ export default function HubungiPage() {
               <div className="flex gap-2 mt-4">
                 <a href={SITE.waLink} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold bg-[#25D366] text-white rounded-lg">
-                  <MessageCircle size={14} /> WhatsApp
+                  <IconBrandWhatsapp size={14} /> WhatsApp
                 </a>
                 <a href={SITE.phoneTel}
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold bg-navy text-white rounded-lg">
-                  <Phone size={14} /> Hubungi
+                  <IconPhone size={14} /> Hubungi
                 </a>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function HubungiPage() {
                 </select>
                 <textarea rows={3} placeholder="Mesej anda..." className="w-full px-3 py-2.5 text-xs border border-gray-200 dark:border-navy-700 rounded-lg bg-white dark:bg-navy-800 text-gray-700 dark:text-gray-300 focus:border-teal outline-none transition-colors resize-none" />
                 <button className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold bg-teal text-white rounded-lg hover:bg-teal-600 transition-colors">
-                  <Send size={14} /> Hantar Mesej
+                  <IconSend size={14} /> Hantar Mesej
                 </button>
               </div>
             </div>

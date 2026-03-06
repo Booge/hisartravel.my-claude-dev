@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ChevronDown, Check, Plane, Bed, Star, MessageCircle } from "lucide-react";
+import { IconChevronDown, IconCheck, IconPlaneDeparture, IconBed, IconStarFilled, IconBrandWhatsapp } from "@tabler/icons-react";
 import { ALL_PACKAGES, formatRM, SITE } from "@/lib/constants";
 import { useState } from "react";
 
@@ -40,7 +40,7 @@ export default function PakejDetailPage() {
         {/* Price table */}
         <div className="mb-8">
           <h2 className="text-sm font-extrabold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
-            <Plane size={16} className="text-teal" /> Maklumat Pakej
+            <IconPlaneDeparture size={16} className="text-teal" /> Maklumat Pakej
           </h2>
           <table className="w-full text-xs">
             <thead><tr className="border-b-2 border-gray-100 dark:border-navy-700"><th className="text-left py-2 text-[9px] font-bold tracking-wider uppercase text-gray-400">Bilik</th><th className="text-right py-2 text-[9px] font-bold tracking-wider uppercase text-gray-400">Harga</th></tr></thead>
@@ -58,13 +58,13 @@ export default function PakejDetailPage() {
         {/* Hotels */}
         <div className="mb-8">
           <h2 className="text-sm font-extrabold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
-            <Bed size={16} className="text-teal" /> Penginapan
+            <IconBed size={16} className="text-teal" /> Penginapan
           </h2>
           {pkg.hotels.map((h) => (
             <div key={h.name} className="p-3 bg-gray-50 dark:bg-navy-800 rounded-lg mb-2">
               <div className="font-bold text-xs text-gray-800 dark:text-gray-200">{h.name}</div>
               <div className="flex items-center gap-1 mt-1">
-                {Array.from({ length: h.stars }).map((_, i) => <Star key={i} size={10} className="fill-amber-400 text-amber-400" />)}
+                {Array.from({ length: h.stars }).map((_, i) => <IconStarFilled key={i} size={10} className="fill-amber-400 text-amber-400" />)}
                 <span className="text-[10px] text-gray-400 ml-2">Jarak: {h.distance}</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function PakejDetailPage() {
               <button onClick={() => setOpenItin(openItin === i ? -1 : i)}
                 className="w-full px-3 py-3 flex items-center justify-between text-left text-xs font-semibold text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-navy-800">
                 {day.split(":")[0]}
-                <ChevronDown size={14} className={`transition-transform ${openItin === i ? "rotate-180 text-teal" : "text-gray-400"}`} />
+                <IconChevronDown size={14} className={`transition-transform ${openItin === i ? "rotate-180 text-teal" : "text-gray-400"}`} />
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openItin === i ? "max-h-40" : "max-h-0"}`}>
                 <p className="px-3 pb-3 text-[11px] text-gray-400 leading-relaxed">{day}</p>
@@ -94,7 +94,7 @@ export default function PakejDetailPage() {
           <div className="grid grid-cols-2 gap-1">
             {pkg.includes.map((item) => (
               <div key={item} className="flex items-center gap-1.5 text-[11px] text-gray-600 dark:text-gray-400 py-1.5">
-                <Check size={14} className="text-teal flex-shrink-0" /> {item}
+                <IconCheck size={14} className="text-teal flex-shrink-0" /> {item}
               </div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function PakejDetailPage() {
         <div className="flex gap-2">
           <a href={`${SITE.waLink}?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold bg-teal text-white rounded-lg">
-            <MessageCircle size={14} /> Saya Berminat
+            <IconBrandWhatsapp size={14} /> Saya Berminat
           </a>
         </div>
       </div>

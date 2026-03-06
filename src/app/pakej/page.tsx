@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Calendar } from "lucide-react";
+import { IconCalendar } from "@tabler/icons-react";
 import { SEASONS } from "@/lib/constants";
 import { PackageCard } from "@/components/ui/package-card";
 
@@ -38,7 +38,7 @@ export default function PakejPage() {
           {filtered.map((season) => (
             <div key={season.name} className="mb-10">
               <h3 className="text-sm font-extrabold text-navy dark:text-teal mb-4 pb-2 inline-flex items-center gap-1.5 border-b-2 border-teal">
-                <Calendar size={14} className="text-teal" />
+                <IconCalendar size={14} stroke={1.5} className="text-teal" />
                 {season.name} · {season.date}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

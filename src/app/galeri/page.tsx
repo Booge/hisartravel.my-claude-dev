@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { IconX, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { GALLERY } from "@/lib/constants";
 
 export default function GaleriPage() {
@@ -31,10 +31,10 @@ export default function GaleriPage() {
       {/* Lightbox */}
       {lightbox !== null && (
         <div className="fixed inset-0 z-[200] bg-black/90 flex items-center justify-center p-4">
-          <button onClick={() => setLightbox(null)} className="absolute top-3 right-3 w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-white"><X size={18} /></button>
-          <button onClick={() => setLightbox((lightbox - 1 + GALLERY.length) % GALLERY.length)} className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white"><ChevronLeft size={20} /></button>
+          <button onClick={() => setLightbox(null)} className="absolute top-3 right-3 w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-white"><IconX size={18} /></button>
+          <button onClick={() => setLightbox((lightbox - 1 + GALLERY.length) % GALLERY.length)} className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white"><IconChevronLeft size={20} /></button>
           <img src={GALLERY[lightbox]} alt="" className="max-w-full max-h-[85vh] object-contain rounded-lg" />
-          <button onClick={() => setLightbox((lightbox + 1) % GALLERY.length)} className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white"><ChevronRight size={20} /></button>
+          <button onClick={() => setLightbox((lightbox + 1) % GALLERY.length)} className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white"><IconChevronRight size={20} /></button>
         </div>
       )}
     </>
